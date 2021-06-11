@@ -13,7 +13,7 @@ function setup() {
   
 
   thickness=random(22,83);
-  weigth=random(30,52);
+  weight=random(30,52);
   speed=random(223,321);
   bullet.velocityX = speed;
 }
@@ -26,6 +26,9 @@ function draw() {
 if (wall.x-bullet.x < (bullet.width+wall.width)/2){
   bullet.velocityX = 0;
   var damage=(0.5 * weight * speed * speed)/(thickness*thickness*thickness);
+  /*console.log("weight"+weight)
+  console.log("speed"+speed)
+  console.log("thickness"+thickness);*/
   if(damage>10){
     bullet.shapeColor = "red";
   }
@@ -34,6 +37,6 @@ if (wall.x-bullet.x < (bullet.width+wall.width)/2){
   }
 }
 
-console.log(damage)
+//console.log(damage)
   drawSprites();
 }
